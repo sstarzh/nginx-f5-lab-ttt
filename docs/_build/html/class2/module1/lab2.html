@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Update the GitLab repo</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Update the GitLab repo"/>
+  <meta name="product" content="F5 + NGINX+ TTT Lab"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="None"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 + NGINX+ TTT Lab" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Update the GitLab repo &#8212; F5 + NGINX+ TTT Lab  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Merge branches" href="lab3.html" />
+    <link rel="prev" title="Setup a new GitLab repo" href="lab1.html" />
+
+  
+    
+
+  
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="dismiss">
+      <button type="button" class="btn btn-info navbar-btn site-hidden">
+        <i class="fa fa-align-justify"></i>
+      </button>
+    </div>
+    <div id="sidebar" class="section-nav">
+      
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 + NGINX+ TTT Lab  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <h5>Current Page</h5>
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Update the GitLab repo</a><ul>
+<li><a class="reference internal" href="#access-gitlab">Access GitLab</a></li>
+<li><a class="reference internal" href="#update-the-new-repo">Update the new repo</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+        <hr>
+        <h5>Site Contents</h5>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1 - demo IaC with CI/CD Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class2.html">Class 2 - Setup our first pipeline</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">Module 1 - Setup Gitlab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Module 2 - Setup Jenkins</a></li>
+</ul>
+</li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+  
+  <div class="main active" id="content">
+    <article class="docs-container site-article-inner">
+            <nav class="site-breadcrumb-nav site-nav">
+          <ul class="site-breadcrumb-list">
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 + NGINX+ TTT Lab </a> &gt; Update the GitLab repo</li>
+          </ul>
+      </nav>
+      
+      
+
+    
+  <div class="section" id="update-the-gitlab-repo">
+<h1>Update the GitLab repo<a class="headerlink" href="#update-the-gitlab-repo" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="access-gitlab">
+<h2>Access GitLab<a class="headerlink" href="#access-gitlab" title="Permalink to this headline">¶</a></h2>
+<p>In this lab, we will update our new repo called <strong>Class2</strong> on <em>GitLab</em>.</p>
+<p>Connect to <em>GitLab</em>. It should be <a class="reference external" href="http:/">http:/</a>/&lt;IP of your VM&gt;:1080/</p>
+<ul class="simple">
+<li>Login: TenantA</li>
+<li>Password: Pa55w0rd</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you use UDF (F5 private cloud), you may use the RDP Jumphost to access <em>GitLab</em>
+or the direct HTTP access from UDF interface</p>
+<a class="reference internal image-reference" href="../../_images/img0062.png"><img alt="../../_images/img0062.png" class="align-center" src="../../_images/img0062.png" style="width: 404.0px; height: 212.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="last reference internal image-reference" href="../../_images/img0162.png"><img alt="../../_images/img0162.png" class="align-center" src="../../_images/img0162.png" style="width: 388.0px; height: 390.0px;" /></a>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/img0072.png"><img alt="../../_images/img0072.png" class="align-center" src="../../_images/img0072.png" style="width: 952.0px; height: 445.0px;" /></a>
+<p>On <em>GitLab</em>, Click on the project <strong>class2</strong></p>
+<a class="reference internal image-reference" href="../../_images/img0082.png"><img alt="../../_images/img0082.png" class="align-center" src="../../_images/img0082.png" style="width: 950.0px; height: 394.0px;" /></a>
+<p>You will see this:</p>
+<a class="reference internal image-reference" href="../../_images/img0092.png"><img alt="../../_images/img0092.png" class="align-center" src="../../_images/img0092.png" style="width: 878.0px; height: 450.0px;" /></a>
+<p>It is fairly rare that people will handle/manage their repositories (<em>repo</em>) through the GUI.
+People will use <em>git</em> commands to handle it. <em>git</em> is available through well known editors like
+<em>VS Code</em>, <em>Atom</em>, … but it can also be managed through CLI. We will use our CLI to do this lab.</p>
+</div>
+<div class="section" id="update-the-new-repo">
+<h2>Update the new repo<a class="headerlink" href="#update-the-new-repo" title="Permalink to this headline">¶</a></h2>
+<p>for this lab we will consider the following:</p>
+<ul class="simple">
+<li>If you use your own lab, you’ll need access to the VM hosting <em>GitLab</em> from your terminal (via SSH)</li>
+<li>If you use UDF.  you can either use the <strong>Jumphost</strong> and the <em>Git Bash</em> app OR <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">a</span> <span class="pre">SSH</span> <span class="pre">connection</span>
+<span class="pre">to</span> <span class="pre">the</span> <span class="pre">CI/CD</span> <span class="pre">System</span></code></li>
+</ul>
+<p>Once you are connected to your system, we need to retrieve our <em>repo</em>. Our repo is
+available on <em>Gitlab</em> on a URI that is structure this way:
+<strong>/&lt;Tenant Name&gt;/&lt;Project Name&gt;.git</strong></p>
+<p>Run the following command:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">your</span> <span class="n">VM</span> <span class="n">IP</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1080</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">you need to make sure that <em>git</em> is installed on your system.</p>
+</div>
+<p>You should see the following:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>[centos@ip-10-1-1-5 ~]$ git clone http://10.1.1.5:1080/TenantA/Class2.git
+Cloning into &#39;Class2&#39;...
+Username for &#39;http://10.1.1.5:1080&#39;: TenantA
+Password for &#39;http://TenantA@10.1.1.5:1080&#39;:
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember that the login is <em>TenantA</em> and password is <em>Pa55w0rd</em></p>
+</div>
+<p>We can see now that a new directory is available called <strong>Class2</strong>. Go into this
+directory and check the content</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>[centos@ip-10-1-1-5 ~]$ ls
+ci-cd-env-setup  Class2
+[centos@ip-10-1-1-5 ~]$ cd Class2
+[centos@ip-10-1-1-5 Class2]$ ls
+README.md
+[centos@ip-10-1-1-5 Class2]$ cat README.md
+# Class2
+
+this is class 2 of the CI CD lab
+</pre></div>
+</div>
+<p>Now we have a copy of our <em>repo</em> locally. However any changes done locally will not be replicated
+automatically on <em>GitLab</em>.</p>
+<p>run the following command:</p>
+<blockquote>
+<div>git branch</div></blockquote>
+<p>You should see this:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>[centos@ip-10-1-1-5 Class2]$ git branch
+* master
+</pre></div>
+</div>
+<p>This is also what we see in the GUI of <em>GitLab</em></p>
+<a class="reference internal image-reference" href="../../_images/img0112.png"><img alt="../../_images/img0112.png" class="align-center" src="../../_images/img0112.png" style="width: 996.0px; height: 716.0px;" /></a>
+<p>As we can see in the GUI, right now we have only one branch and it is called <strong>master</strong>.
+Usually we consider the <strong>master</strong> branch, the offical branch of the <em>repo</em>. This is the
+branch you usually want to check for the latest viable/stable/recommended version of a
+<em>repo</em>.</p>
+<p>When people want to work on a new version of the project, a new feature of the project, an
+extension to it, … they will create a new <em>branch</em>. By default, this new <em>branch</em> will be
+identical to the <em>master</em> branch until you start changing stuff in it. We will be able to
+merge later our changes into the <strong>master</strong> branch (when required)</p>
+<p>If you want to know more about <em>branch</em>, you can review this link: <a class="reference external" href="https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is">Branch</a>.</p>
+<p>Let’s create our new branch, we will call it <strong>development</strong></p>
+<p>run the following commands:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="n">development</span>
+
+<span class="n">git</span> <span class="n">branch</span>
+
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">development</span>
+
+<span class="n">git</span> <span class="n">branch</span>
+</pre></div>
+</div>
+<p>You should see something like this:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>[centos@ip-10-1-1-5 Class2]$ git branch
+* master
+[centos@ip-10-1-1-5 Class2]$ git branch development
+[centos@ip-10-1-1-5 Class2]$ git branch
+  development
+* master
+[centos@ip-10-1-1-5 Class2]$ git checkout development
+Switched to branch &#39;development&#39;
+[centos@ip-10-1-1-5 Class2]$ git branch
+* development
+  master
+[centos@ip-10-1-1-5 Class2]$
+</pre></div>
+</div>
+<p>When you run the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> command, it will show you all the branches you have
+but also which <em>branch</em> is active. You can see the active <em>branch</em> by the “*” before
+the branch name</p>
+<p>We have a new branch now called <strong>development</strong> and we will work on it. Remember that
+our changes are <strong>LOCAL</strong>. Nothing is yet on <em>GitLab</em>. You can review this by checking
+your <em>GitLab</em> GUI again and look for a new <em>branch</em>.</p>
+<a class="reference internal image-reference" href="../../_images/img0122.png"><img alt="../../_images/img0122.png" class="align-center" src="../../_images/img0122.png" style="width: 520.0px; height: 238.0px;" /></a>
+<p>Let’s update the README.md file and create a new file.</p>
+<p>To create the new file, run the following command:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;git is awesome&quot;</span> <span class="o">&gt;</span> <span class="n">GitRocks</span>
+</pre></div>
+</div>
+<p>To update the README.md file, run the following command:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;.Welcome to this Lab&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>If you check your folder now, you should have a new file called <strong>Gitrocks</strong> and an updated <em>README.md</em> file</p>
+<p>We need to push our changes on <em>GitLab</em>:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This command will add files to the index</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;this is our first git push&quot;</span>
+</pre></div>
+</div>
+<p>This command will record the changes in our repository and add a message related to our changes</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">development</span>
+</pre></div>
+</div>
+<p>This command will update the remote <em>repo</em> on <em>GitLab</em> and create the relevant <em>branch</em> on <em>GitLab</em></p>
+<p>You should see something like this:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>[centos@ip-10-1-1-5 Class2]$ git add .
+
+[centos@ip-10-1-1-5 Class2]$ git commit -m &quot;this is our first git push&quot;
+[development 1e98130] this is our first git push
+ Committer: Cloud User &lt;centos@ip-10-1-1-5.us-west-2.compute.internal&gt;
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name &quot;Your Name&quot;
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 GitRocks
+
+[centos@ip-10-1-1-5 Class2]$ git push origin development
+Username for &#39;http://10.1.1.5:1080&#39;: TenantA
+Password for &#39;http://TenantA@10.1.1.5:1080&#39;:
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 389 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote:
+remote: To create a merge request for development, visit:
+remote:   http://d5969ebd2af4/TenantA/Class2/merge_requests/new?merge_request%5Bsource_branch%5D=development
+remote:
+To http://10.1.1.5:1080/TenantA/Class2.git
+ * [new branch]      development -&gt; development
+</pre></div>
+</div>
+<p>If you check your <em>GitLab</em> GUI, refresh the GUI. You’ll see that the <strong>master</strong> branch
+doesn’t have any of our changes</p>
+<a class="reference internal image-reference" href="../../_images/img0142.png"><img alt="../../_images/img0142.png" class="align-center" src="../../_images/img0142.png" style="width: 984.0px; height: 494.0px;" /></a>
+<p>If you click on the dropdown list where <strong>master</strong> is selected, you’ll see that a new <em>branch</em> has been created. Select
+the <strong>development</strong> branch.</p>
+<a class="reference internal image-reference" href="../../_images/img0152.png"><img alt="../../_images/img0152.png" class="align-center" src="../../_images/img0152.png" style="width: 501.0px; height: 243.0px;" /></a>
+<p>Here you can see that:</p>
+<ul class="simple">
+<li>we see our new file <strong>GitRocks</strong></li>
+<li>you can see that the <strong>README.md</strong> file has been updated</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/img0132.png"><img alt="../../_images/img0132.png" class="align-center" src="../../_images/img0132.png" style="width: 972.0px; height: 547.0px;" /></a>
+</div>
+</div>
+
+
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab1.html" title="Setup a new GitLab repo" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab3.html" title="Merge branches" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  </body>
+</html>

@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <head>
   
-  <!--STAGING:-->
-  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
-  <!--Production:-->
-  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Review Jenkins setup</title>
   
 
   <meta charset="utf-8">
   <!-- Twitter Bootstrap viewport setting -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- F5 metadata -->
-  <meta name="kb_doc_type" content="Manual"/>
-  <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor"/>
-  <meta name="product" content="Getting Started with F5 BIG-IP"/>
+  <meta name="title" content="Review Jenkins setup"/>
+  <meta name="product" content="F5 + NGINX+ TTT Lab"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
   <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 + NGINX+ TTT Lab" content=""/>
+
 
   
-  
+
   
   <link href="https://cdn.f5.com/favicon.ico" rel="icon">
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text"> jQuery.noConflict(true)</script>
 
 </head>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -36,32 +34,44 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor &#8212; Getting Started with F5 BIG-IP  documentation</title>
+    <title>Review Jenkins setup &#8212; F5 + NGINX+ TTT Lab  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.2. Module – Installing a BIG-IP Appliance" href="../module2/module2.html" />
-    <link rel="prev" title="2.1.1. Lab – Download the BIG-IP Virtual Edition Image" href="lab1.html" />
+    <link rel="next" title="Module 2 - Trigger the IaC Demo" href="../module2/module2.html" />
+    <link rel="prev" title="Review Gitlab setup" href="lab1.html" />
+
+  
+    
+
+  
   </head><body>
   <div id="clouddocs-header"></div>
 
     <div id="dismiss">
-      <button type="button" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>
+      <button type="button" class="btn btn-info navbar-btn site-hidden">
+        <i class="fa fa-align-justify"></i>
+      </button>
     </div>
     <div id="sidebar" class="section-nav">
+      
       <nav class="nav-sidebartoc">
-        <h5>Getting Started with F5 BIG-IP  documentation </h5>
+
+        
+         <h5>F5 + NGINX+ TTT Lab  </h5>
+        
 <div id="searchbox" role="search">
   <form class="search" action="../../search.html" method="get">
     <input type="text" class="search" name="q" placeholder=" Search..." />
@@ -75,9 +85,9 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor</a><ul>
-<li><a class="reference internal" href="#task-upload-the-image-to-your-hypervisor">2.1.2.1. Task – Upload the image to your Hypervisor</a></li>
-<li><a class="reference internal" href="#task-start-a-bip-ve-instance">2.1.2.2. Task – Start a BIG-IP Virtual Edition Instance</a></li>
+<li><a class="reference internal" href="#">Review Jenkins setup</a><ul>
+<li><a class="reference internal" href="#the-my-webapp-ci-cd-demo-dev-pipeline">The my-webapp-ci-cd-demo-dev pipeline</a></li>
+<li><a class="reference internal" href="#the-adc-services-dev-pipeline">The adc-services-dev pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -88,14 +98,12 @@
         <span class="nav-sidebartoc">
             <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - Getting Started with F5 BIG-IP</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Installing a BIG-IP Virtual Edition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">2.2. Module – Installing a BIG-IP Appliance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">Class 1 - demo IaC with CI/CD Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">Module 1 - Review the setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Module 2 - Trigger the IaC Demo</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../markdown.html">4. Markdown files are also supported</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2 - Setup our first pipeline</a></li>
 </ul>
 
         </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
@@ -111,69 +119,272 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">Getting Started with F5 BIG-IP </a> &gt; 2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 + NGINX+ TTT Lab </a> &gt; Review Jenkins setup</li>
           </ul>
       </nav>
       
       
 
     
-  <div class="section" id="lab-install-a-bip-ve-image-on-a-hypervisor">
-<h1>2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor<a class="headerlink" href="#lab-install-a-bip-ve-image-on-a-hypervisor" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Needs lab description</p>
+  <div class="section" id="review-jenkins-setup">
+<h1>Review Jenkins setup<a class="headerlink" href="#review-jenkins-setup" title="Permalink to this headline">¶</a></h1>
+<p>the next DevOps tools we leverage in this environment is <em>Jenkins</em>. It is a <em>CI Server</em> that we will use
+to execute DevOps <em>pipeline</em>.</p>
+<p>Here is a good overview of <a class="reference external" href="https://www.infoworld.com/article/3239666/devops/what-is-jenkins-the-ci-server-explained.html">Jenkins</a> and how to work with <em>pipelines</em>.</p>
+<p>Connect to your <em>Jenkins</em> Server. It should be <a class="reference external" href="http:/">http:/</a>/&lt;IP of your VM&gt;:1180/</p>
+<ul class="simple">
+<li>Login: TenantA</li>
+<li>Password: Pa55w0rd</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/img008.png"><img alt="../../_images/img008.png" class="align-center" src="../../_images/img008.png" style="width: 921.0px; height: 597.0px;" /></a>
+<p>On the main page, we can see two different items:</p>
+<ul class="simple">
+<li>adc-services-dev</li>
+<li>my-webapp-ci-cd-demo-dev</li>
+</ul>
+<p>Those 2 items are pipelines. Each of them will be <em>triggered</em> by the <em>WebHooks</em> we have seen during the <em>GitLab</em>
+review.  You can see those <em>WebHooks</em> by going back to the <em>GitLab</em> interface and go into <em>Settings</em> &gt;
+<em>Integration</em> in each of the different repo <strong>my-webapp-ci-cd-demo</strong> and <strong>ADC-Services</strong> (Login: TenantA,
+Password: Pa55w0rd)</p>
+<a class="reference internal image-reference" href="../../_images/img003.png"><img alt="../../_images/img003.png" class="align-center" src="../../_images/img003.png" style="width: 1434.0px; height: 696.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<p>In the previous lab we learned how to download the BIG-IP Virtual Edition image.  Now, we
-can install the image onto a hypervisor.</p>
-<div class="section" id="task-upload-the-image-to-your-hypervisor">
-<h2>2.1.2.1. Task – Upload the image to your Hypervisor<a class="headerlink" href="#task-upload-the-image-to-your-hypervisor" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Needs task description</p>
+<a class="reference internal image-reference" href="../../_images/img007.png"><img alt="../../_images/img007.png" class="align-center" src="../../_images/img007.png" style="width: 1421.0px; height: 639.0px;" /></a>
+<div class="section" id="the-my-webapp-ci-cd-demo-dev-pipeline">
+<h2>The my-webapp-ci-cd-demo-dev pipeline<a class="headerlink" href="#the-my-webapp-ci-cd-demo-dev-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>On the <em>Jenkins</em> GUI, click on the pipeline called <em>my-webapp-ci-cd-demo-dev</em></p>
+<a class="reference internal image-reference" href="../../_images/img013.png"><img alt="../../_images/img013.png" class="align-center" src="../../_images/img013.png" style="width: 821.0px; height: 406.0px;" /></a>
+<p>You should see something like this :</p>
+<a class="reference internal image-reference" href="../../_images/img015.png"><img alt="../../_images/img015.png" class="align-center" src="../../_images/img015.png" style="width: 936.0px; height: 550.0px;" /></a>
+<p>If you have already triggered the pipeline, the build section may look like this:</p>
+<a class="reference internal image-reference" href="../../_images/img014.png"><img alt="../../_images/img014.png" class="align-center" src="../../_images/img014.png" style="width: 1664.0px; height: 679.0px;" /></a>
+<p>A <em>build</em> is one execution of your <em>pipeline</em>. It will show:</p>
+<ul class="simple">
+<li>the different steps of your pipeline (here we can see <em>build app</em>, <em>test app</em>, …)</li>
+<li>if each step is successful or not. If a step fail, it will be red and the pipeline will stop immediately</li>
+</ul>
+<p>if you click on a build number, you will be able to review in details this <em>pipeline</em> execution. It will
+help you review its execution and whether it has been executed successfully or not</p>
+<a class="reference internal image-reference" href="../../_images/img016.png"><img alt="../../_images/img016.png" class="align-center" src="../../_images/img016.png" style="width: 1664.0px; height: 679.0px;" /></a>
+<p>We can review a few options in the left menu :</p>
+<ul class="simple">
+<li><em>Build now</em>: This would trigger the execution of the <em>pipeline</em> even if <em>GitLab</em> didn’t send a <em>WebHook</em>.
+it’s convenient when working on a pipeline for troubleshooting purposes</li>
+<li><em>Configure</em>: Give you access to the setup of this <em>pipeline</em>. We will review it later</li>
+<li><em>GitHub</em>: Link to send you to the related <em>Github</em>/<em>GitLab</em> repo. It’s defined in the setup.</li>
+</ul>
+<p>We can click on <em>Configure</em> to review the setup of this <em>pipeline</em>.</p>
+<a class="reference internal image-reference" href="../../_images/img017.png"><img alt="../../_images/img017.png" class="align-center" src="../../_images/img017.png" style="width: 337.0px; height: 405.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
-<p>In this task you will upload the image to your hypervisor.</p>
-<p>Follow these steps to complete this task:</p>
-<ol class="task-stepsx arabic">
-<li><p class="first">Open your hypervisor management console</p>
-</li>
-<li><p class="first">Figure out how to upload the image</p>
-<div class="admonition error">
-<p class="first admonition-title">Error</p>
-<p class="last">These are bad instructions…</p>
-</div>
-</li>
-<li><p class="first">Great!  You’re done</p>
-</li>
-</ol>
-</div>
-<div class="section" id="task-start-a-bip-ve-instance">
-<h2>2.1.2.2. Task – Start a BIG-IP Virtual Edition Instance<a class="headerlink" href="#task-start-a-bip-ve-instance" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">Needs task description</p>
-</div>
-<p>In this task we will start and instance of BIG-IP using the image uploaded in
-the previous task.</p>
-<p>Follow these steps to complete this task:</p>
-<ol class="arabic simple">
-<li>Open your hypervisor management console</li>
-<li>Click the BIG-IP image</li>
-<li>Click the ‘Start’ button (or it’s equivalent)</li>
-</ol>
-</div>
-</div>
+<a class="reference internal image-reference" href="../../_images/img018.png"><img alt="../../_images/img018.png" class="align-center" src="../../_images/img018.png" style="width: 1504.0px; height: 619.0px;" /></a>
+<p>Let’s review the different sections of our <em>pipeline</em></p>
+<p>Scroll down to the <em>Github</em> section:</p>
+<a class="reference internal image-reference" href="../../_images/img019.png"><img alt="../../_images/img019.png" class="align-center" src="../../_images/img019.png" style="width: 1057.0px; height: 160.0px;" /></a>
+<p>Here we reference our related <em>GitLab</em> project. We specify the URL to it and how to authenticate on
+this repo (in case it’s needed). We reference <em>GitLab local</em> which has been setup previously. You
+can check the authentication that has been setup here: <em>Jenkins Home page</em> &gt; <em>Manage Jenkins</em> &gt;
+<em>Configure System</em> and scroll down to the <em>GitLab</em> section</p>
+<a class="reference internal image-reference" href="../../_images/img020.png"><img alt="../../_images/img020.png" class="align-center" src="../../_images/img020.png" style="width: 1637.0px; height: 430.0px;" /></a>
+<p>In the <em>Build Triggers</em> section of your <em>pipeline</em>, you can see the following:</p>
+<a class="reference internal image-reference" href="../../_images/img021.png"><img alt="../../_images/img021.png" class="align-center" src="../../_images/img021.png" style="width: 1034.0px; height: 659.0px;" /></a>
+<p>Here we explain when a new <em>build</em> of our <em>pipeline</em> should be triggered: We explain that if we receive
+a <em>WebHook</em> to this specific URL: <em>http://172.18.0.3:8080/project/my-webapp-ci-cd-demo-dev</em> , we will
+trigger a <em>build</em></p>
+<p>If you remember the <em>GitLab</em> setup, we specified for the <strong>my-webapp-ci-cd-demo</strong> repo a <em>WebHook</em>
+targetting this URL:</p>
+<a class="reference internal image-reference" href="../../_images/img003.png"><img alt="../../_images/img003.png" class="align-center" src="../../_images/img003.png" style="width: 1434.0px; height: 696.0px;" /></a>
+<p>Go to the last section of our setup, called <em>Pipeline</em></p>
+<a class="reference internal image-reference" href="../../_images/img022.png"><img alt="../../_images/img022.png" class="align-center" src="../../_images/img022.png" style="width: 1028.0px; height: 692.0px;" /></a>
+<p>Here it explains how our <em>pipeline</em> will be executed:</p>
+<ul class="simple">
+<li>we specify the <em>GitHub</em>/<em>GitLab</em> repo and <em>branch</em> to retrieve automatically when the <em>build</em>
+is triggered. Here it means that as soon as a new <em>build</em> is happening, <em>Jenkins</em> will
+automatically retrieve this repo to make it available for processing</li>
+<li>we specify the <em>Script Path</em>. Here it is the jenkinsFile that contains the logic of our pipeline
+and what needs to be executed. Here we specify the name of the file: <em>jenkinsFile</em> and that it’s
+at the root of the repo we retrieved : <strong>my-webapp-ci-cd-demo</strong></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/img023.png"><img alt="../../_images/img023.png" class="align-center" src="../../_images/img023.png" style="width: 560.0px; height: 527.0px;" /></a>
+<p>If you want to know more about jenkinsFile, you can check this <a class="reference external" href="https://jenkins.io/doc/book/pipeline/jenkinsfile/">JenkinsFileLink</a></p>
+<p>This is our <em>jenkinsFile</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!groovy</span>
 
+<span class="n">pipeline</span> <span class="p">{</span>
+    <span class="n">agent</span> <span class="nb">any</span>
+    <span class="n">stages</span> <span class="p">{</span>
+            <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Setup Env&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">steps</span> <span class="p">{</span>
+                    <span class="n">sh</span> <span class="s1">&#39;python --version&#39;</span>
+                        <span class="n">echo</span> <span class="s1">&#39;Setup environment and needed modules&#39;</span>
+                    <span class="n">sh</span> <span class="s1">&#39;git config --global user.email &quot;n.menant@f5.com&quot;&#39;</span>
+                <span class="n">sh</span> <span class="s1">&#39;git config --global user.name &quot;Nicolas Menant&quot;&#39;</span>
+                <span class="n">echo</span> <span class="s1">&#39;Cloning ADC-Services repo&#39;</span>
+                <span class="n">sh</span> <span class="s1">&#39;git clone http://TenantA:Pa55w0rd@172.18.0.2/nicolas/ADC-Services.git&#39;</span>
+                    <span class="nb">dir</span><span class="p">(</span><span class="s1">&#39;ADC-Services&#39;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">sh</span> <span class="s1">&#39;git checkout dev&#39;</span>
+                <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Build App&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                        <span class="n">echo</span> <span class="s1">&#39;Building Application...&#39;</span>
+                        <span class="n">sh</span> <span class="s1">&#39;python jenkins/deploy-app/deploy-app.py&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Test App&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                    <span class="n">echo</span> <span class="s1">&#39;Testing Application...&#39;</span>
+                        <span class="n">sh</span> <span class="s1">&#39;sleep 10&#39;</span>
+                <span class="n">sh</span> <span class="s1">&#39;python tests/run_tests.py&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Build ADC Services definition&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                    <span class="n">echo</span> <span class="s1">&#39;Build ADC Services definition...&#39;</span>
+                        <span class="n">sh</span> <span class="s1">&#39;python jenkins/adc-services/create-adc-services-definition.py&#39;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Test ADC Service definition&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                <span class="n">echo</span> <span class="s1">&#39;Testing ADC Service Definition ..&#39;</span>
+                <span class="n">sh</span> <span class="s1">&#39;python jenkins/adc-services/test-service-definition.py&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+            <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Push ADC Service definition&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                <span class="n">sh</span> <span class="s1">&#39;echo ${GIT_URL##*/} &gt; appname.tmp&#39;</span>
+                <span class="n">sh</span> <span class="s1">&#39;python jenkins/adc-services/push-adc-services-definition.py&#39;</span>
+                <span class="nb">dir</span><span class="p">(</span><span class="s1">&#39;ADC-Services&#39;</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">sh</span> <span class="s1">&#39;git add .&#39;</span>
+                        <span class="n">sh</span> <span class="s1">&#39;git commit -m &quot;update from $GIT_URL / $GIT_BRANCH=`cat ../appname.tmp`###`cat ../my-adc-cluster/target-cluster`&quot;&#39;</span>
+                        <span class="n">sh</span> <span class="s1">&#39;git push&#39;</span>
+                <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">post</span> <span class="p">{</span>
+        <span class="n">always</span> <span class="p">{</span>
+            <span class="n">cleanWs</span><span class="p">()</span>
+        <span class="p">}</span>
+            <span class="n">success</span> <span class="p">{</span>
+                    <span class="n">updateGitlabCommitStatus</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span>
+            <span class="p">}</span>
+            <span class="n">failure</span> <span class="p">{</span>
+                <span class="n">updateGitlabCommitStatus</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="s1">&#39;failed&#39;</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Our jenkinsFile will do the following:</p>
+<ul class="simple">
+<li>Retrieve another <em>GitLab</em> repo: <strong>ADC-Services</strong>. Once the app is deployed, we want to update this
+repo with the new service definition</li>
+<li>Execute the file <em>jenkins/deploy-app/deploy-app.py</em> in the repo <strong>my-webapp-ci-cd-demo</strong> we retrieved.
+it is the step called <em>Build App</em> in the <em>build</em></li>
+<li>Execute the file <em>tests/run_tests.py</em> in the repo <strong>my-webapp-ci-cd-demo</strong> we retrieved.
+it is the step called <em>Test App</em> in the <em>build</em></li>
+<li>Execute the file <em>jenkins/adc-services/create-adc-services-definition.py</em> in the repo
+<strong>my-webapp-ci-cd-demo</strong> we retrieved. it is the step called <em>Build ADC Services definition</em> in the
+<em>build</em></li>
+<li>Execute the file <em>jenkins/adc-services/test-service-definition.py</em> in the repo
+<strong>my-webapp-ci-cd-demo</strong> we retrieved. it is the step called <em>Test ADC Service definition</em> in the
+<em>build</em></li>
+<li>Execute the file <em>jenkins/adc-services/push-adc-services-definition.py</em> in the repo
+<strong>my-webapp-ci-cd-demo</strong> we retrieved. it is the step called <em>Push ADC Service definition</em> in the
+<em>build</em>. This script will update the repo <strong>ADC-Services</strong> and then will push the changes to <em>GitLab</em></li>
+</ul>
+</div>
+<div class="section" id="the-adc-services-dev-pipeline">
+<h2>The adc-services-dev pipeline<a class="headerlink" href="#the-adc-services-dev-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>The other <em>pipeline</em> available on <em>Jenkins</em> is called <strong>adc-services-dev</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/img024.png"><img alt="../../_images/img024.png" class="align-center" src="../../_images/img024.png" style="width: 770.0px; height: 568.0px;" /></a>
+<p>You can click on <em>Configure</em> to review its setup.</p>
+<a class="reference internal image-reference" href="../../_images/img025.png"><img alt="../../_images/img025.png" class="align-center" src="../../_images/img025.png" style="width: 770.0px; height: 568.0px;" /></a>
+<p>Here a summary of its configuration:</p>
+<ul class="simple">
+<li>It’s “linked” to the <em>GitLab</em> repo <strong>ADC-Services</strong></li>
+<li>It’s setup to be triggered by a <em>WebHook</em> going to <em>http://172.18.0.3:8080/project/adc-services-dev</em>.
+Remember that the <strong>ADC-Services</strong> <em>GitLab</em> repository has been setup to reach to this URL when a commit
+happen.</li>
+<li>It will rely on the script path <em>jenkinsFile</em> setup in the <strong>ADC-Services</strong> repo (root directory)</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/img026.png"><img alt="../../_images/img026.png" class="align-center" src="../../_images/img026.png" style="width: 1031.0px; height: 170.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/img027.png"><img alt="../../_images/img027.png" class="align-center" src="../../_images/img027.png" style="width: 1036.0px; height: 666.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/img027.png"><img alt="../../_images/img027.png" class="align-center" src="../../_images/img027.png" style="width: 1036.0px; height: 666.0px;" /></a>
+<p>Here is the jenkinsFile in the <strong>ADC-Services</strong> repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!groovy</span>
+
+<span class="n">pipeline</span> <span class="p">{</span>
+    <span class="n">agent</span> <span class="nb">any</span>
+    <span class="n">stages</span> <span class="p">{</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Setup Env&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                    <span class="n">sh</span> <span class="s1">&#39;python --version&#39;</span>
+                    <span class="n">echo</span> <span class="s1">&#39;Setup environment and needed modules&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+       <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Build AS3 Declaration&#39;</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">steps</span> <span class="p">{</span>
+                    <span class="n">echo</span> <span class="s1">&#39;Building Application...&#39;</span>
+                    <span class="n">sh</span> <span class="s1">&#39;git log -1 &gt; commit_msg.tmp&#39;</span>
+                    <span class="n">sh</span> <span class="s1">&#39;python create-as3-declaration.py `cat commit_msg.tmp | grep &quot;=&quot; | rev | cut -d= -f1 | rev` $GIT_URL $GIT_BRANCH&#39;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Test AS3 Declaration&#39;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">steps</span> <span class="p">{</span>
+              <span class="n">echo</span> <span class="s1">&#39;Test AS3 Declaration...&#39;</span>
+                    <span class="n">sh</span> <span class="s1">&#39;python test-adc-services.py&#39;</span>
+       <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Deploy AS3 Declaration&#39;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">steps</span> <span class="p">{</span>
+              <span class="n">echo</span> <span class="s1">&#39;Deploy ADC Services&#39;</span>
+                    <span class="n">sh</span> <span class="s1">&#39;python deploy-adc-services.py&#39;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Test ADC and App&#39;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">steps</span> <span class="p">{</span>
+              <span class="n">echo</span> <span class="s1">&#39;Testing ADC and Application...&#39;</span>
+              <span class="n">sh</span> <span class="s1">&#39;python test-app-adc-services.py `cat commit_msg.tmp | grep &quot;=&quot; | rev | cut -d= -f1 | rev`&#39;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">post</span> <span class="p">{</span>
+      <span class="n">always</span> <span class="p">{</span>
+          <span class="n">cleanWs</span><span class="p">()</span>
+      <span class="p">}</span>
+        <span class="n">success</span> <span class="p">{</span>
+            <span class="n">updateGitlabCommitStatus</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span>
+        <span class="p">}</span>
+        <span class="n">failure</span> <span class="p">{</span>
+                <span class="n">updateGitlabCommitStatus</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="s1">&#39;failed&#39;</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p>Here you can review the different “steps” of the pipeline and which scripts are tied to each steps.</p>
+</div>
+</div>
 
 
     
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="lab1.html" title="2.1.1. Lab – Download the BIG-IP Virtual Edition Image" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="lab1.html" title="Review Gitlab setup" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="../module2/module2.html" title="2.2. Module – Installing a BIG-IP Appliance" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="../module2/module2.html" title="Module 2 - Trigger the IaC Demo" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>
@@ -189,11 +400,8 @@ the previous task.</p>
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <script src="../../_static/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-    jQuery.noConflict(true)
-  </script>
   <script src="../../_static/js/clouddocs.js"></script>
   </body>
 </html>

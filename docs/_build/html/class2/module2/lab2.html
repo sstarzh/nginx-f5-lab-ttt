@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Setup the Jenkinsfile</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Setup the Jenkinsfile"/>
+  <meta name="product" content="F5 + NGINX+ TTT Lab"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="None"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 + NGINX+ TTT Lab" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Setup the Jenkinsfile &#8212; F5 + NGINX+ TTT Lab  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Setup a new Jenkins pipeline" href="lab1.html" />
+
+  
+    
+
+  
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="dismiss">
+      <button type="button" class="btn btn-info navbar-btn site-hidden">
+        <i class="fa fa-align-justify"></i>
+      </button>
+    </div>
+    <div id="sidebar" class="section-nav">
+      
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 + NGINX+ TTT Lab  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <h5>Current Page</h5>
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Setup the Jenkinsfile</a><ul>
+<li><a class="reference internal" href="#create-the-jenkinsfile">Create the Jenkinsfile</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+        <hr>
+        <h5>Site Contents</h5>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1 - demo IaC with CI/CD Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class2.html">Class 2 - Setup our first pipeline</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Module 1 - Setup Gitlab</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module2.html">Module 2 - Setup Jenkins</a></li>
+</ul>
+</li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+  
+  <div class="main active" id="content">
+    <article class="docs-container site-article-inner">
+            <nav class="site-breadcrumb-nav site-nav">
+          <ul class="site-breadcrumb-list">
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 + NGINX+ TTT Lab </a> &gt; Setup the Jenkinsfile</li>
+          </ul>
+      </nav>
+      
+      
+
+    
+  <div class="section" id="setup-the-jenkinsfile">
+<h1>Setup the Jenkinsfile<a class="headerlink" href="#setup-the-jenkinsfile" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, we will create the relevant <strong>Jenkinsfile</strong>. To learn more about <em>Jenkinsfile</em>,
+don’t hesitate to check this link: <a class="reference external" href="https://jenkins.io/doc/book/pipeline/jenkinsfile/">Jenkinsfile</a>.</p>
+<div class="section" id="create-the-jenkinsfile">
+<h2>Create the Jenkinsfile<a class="headerlink" href="#create-the-jenkinsfile" title="Permalink to this headline">¶</a></h2>
+<p>Connect to your <em>GitLab</em> GUI and go into your <strong>Class2</strong> project/repository.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">it may be a good practice for you to try to do the same in CLI.</p>
+</div>
+<p>Select your <strong>development</strong> branch. Click on the <strong>+</strong> sign and select <strong>New file</strong>.</p>
+<ul>
+<li><p class="first"><em>File Name</em>: <strong>Jenkinsfile</strong></p>
+</li>
+<li><p class="first">in the text section, copy/paste the following:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!groovy</span>
+
+<span class="n">pipeline</span> <span class="p">{</span>
+    <span class="n">agent</span> <span class="nb">any</span>
+
+    <span class="n">stages</span> <span class="p">{</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Build&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                <span class="n">echo</span> <span class="s1">&#39;Building.. &#39;</span>
+                <span class="n">sh</span> <span class="s1">&#39;echo GIT branch is $GIT_BRANCH&#39;</span>
+                <span class="n">sh</span> <span class="s1">&#39;ls -l&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                <span class="n">echo</span> <span class="s1">&#39;Testing..&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Deploy&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">steps</span> <span class="p">{</span>
+                <span class="n">echo</span> <span class="s1">&#39;Deploying....&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">post</span> <span class="p">{</span>
+        <span class="n">always</span> <span class="p">{</span>
+            <span class="n">cleanWs</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/img0223.png"><img alt="../../_images/img0223.png" class="align-center" src="../../_images/img0223.png" style="width: 895.0px; height: 743.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Specify a Commit message, validate that you’re on the <strong>development</strong> branch and
+click on the <strong>Commit changes</strong> button.</p>
+<a class="reference internal image-reference" href="../../_images/img0233.png"><img alt="../../_images/img0233.png" class="align-center" src="../../_images/img0233.png" style="width: 678.0px; height: 233.0px;" /></a>
+</li>
+</ul>
+<p>You should see a blue banner to confirm the file creation</p>
+<a class="reference internal image-reference" href="../../_images/img0242.png"><img alt="../../_images/img0242.png" class="align-center" src="../../_images/img0242.png" style="width: 331.0px; height: 119.0px;" /></a>
+<p>Since we have “pushed” a change in our repo, our <em>Jenkins</em> pipeline has been triggered. Go
+back to the <em>Jenkins</em> GUI to see what happened. You should see the following in your
+<strong>class2-pipeline</strong> <em>pipeline</em>:</p>
+<a class="reference internal image-reference" href="../../_images/img0262.png"><img alt="../../_images/img0262.png" class="align-center" src="../../_images/img0262.png" style="width: 1264.0px; height: 689.0px;" /></a>
+<p>Here we can see that the <em>build</em> is successful since we got a “green” line. We can see the different
+<em>stages</em> that were listed in our <em>Jenkinsfile</em> ! Build, Test, Deploy.</p>
+<p>If you want to know more, click on the <em>build</em> number on the bottom left.</p>
+<a class="reference internal image-reference" href="../../_images/img0272.png"><img alt="../../_images/img0272.png" class="align-center" src="../../_images/img0272.png" style="width: 875.0px; height: 517.0px;" /></a>
+<p>Here you’ll see the different <em>stages</em> of your <em>pipeline</em> execution.</p>
+<p>Jenkins is notified by the <em>WebHook</em> and retrieved the <em>Jenkinsfile</em></p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Started</span> <span class="n">by</span> <span class="n">GitLab</span> <span class="n">push</span> <span class="n">by</span> <span class="n">TenantA</span>
+<span class="p">[</span><span class="n">Office365connector</span><span class="p">]</span> <span class="n">No</span> <span class="n">webhooks</span> <span class="n">to</span> <span class="n">notify</span>
+<span class="n">Obtained</span> <span class="n">Jenkinsfile</span> <span class="kn">from</span> <span class="nn">git</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span>
+<span class="n">Running</span> <span class="ow">in</span> <span class="n">Durability</span> <span class="n">level</span><span class="p">:</span> <span class="n">MAX_SURVIVABILITY</span>
+<span class="p">[</span><span class="n">Pipeline</span><span class="p">]</span> <span class="n">node</span>
+<span class="n">Running</span> <span class="n">on</span> <span class="n">Jenkins</span> <span class="ow">in</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">jenkins_home</span><span class="o">/</span><span class="n">workspace</span><span class="o">/</span><span class="n">class2</span><span class="o">-</span><span class="n">pipeline</span>
+</pre></div>
+</div>
+<p>Then it starts to execute our <em>Jenkinsfile</em>. You can follow the processing of our file through the
+light grey text. the dark grey text is the output of what is executed.</p>
+<p>We specified in our <em>pipeline</em> configuration that we wanted to checkout the SCM so it
+retrieves the <strong>developement</strong> branch of our <em>repo</em></p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Pipeline</span><span class="p">]</span> <span class="p">{</span> <span class="p">(</span><span class="n">Declarative</span><span class="p">:</span> <span class="n">Checkout</span> <span class="n">SCM</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Pipeline</span><span class="p">]</span> <span class="n">checkout</span>
+<span class="n">Cloning</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">Git</span> <span class="n">repository</span>
+<span class="n">Cloning</span> <span class="n">repository</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">init</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">jenkins_home</span><span class="o">/</span><span class="n">workspace</span><span class="o">/</span><span class="n">class2</span><span class="o">-</span><span class="n">pipeline</span> <span class="c1"># timeout=10</span>
+<span class="n">Fetching</span> <span class="n">upstream</span> <span class="n">changes</span> <span class="kn">from</span> <span class="nn">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="o">--</span><span class="n">version</span> <span class="c1"># timeout=10</span>
+<span class="n">using</span> <span class="n">GIT_ASKPASS</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">credentials</span> <span class="n">Gitlab</span> <span class="n">user</span> <span class="k">for</span> <span class="n">TenantA</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">fetch</span> <span class="o">--</span><span class="n">tags</span> <span class="o">--</span><span class="n">progress</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">config</span> <span class="n">remote</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">url</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span> <span class="c1"># timeout=10</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">remote</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">fetch</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span> <span class="c1"># timeout=10</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">config</span> <span class="n">remote</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">url</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span> <span class="c1"># timeout=10</span>
+<span class="n">Fetching</span> <span class="n">upstream</span> <span class="n">changes</span> <span class="kn">from</span> <span class="nn">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span>
+<span class="n">using</span> <span class="n">GIT_ASKPASS</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">credentials</span> <span class="n">Gitlab</span> <span class="n">user</span> <span class="k">for</span> <span class="n">TenantA</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">fetch</span> <span class="o">--</span><span class="n">tags</span> <span class="o">--</span><span class="n">progress</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="n">TenantA</span><span class="o">/</span><span class="n">Class2</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
+<span class="n">skipping</span> <span class="n">resolution</span> <span class="n">of</span> <span class="n">commit</span> <span class="mi">9</span><span class="n">d7ccaf9cb8eb5d682eb4eba4d7d8d75835da3b0</span><span class="p">,</span> <span class="n">since</span> <span class="n">it</span> <span class="n">originates</span> <span class="kn">from</span> <span class="nn">another</span> <span class="n">repository</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">rev</span><span class="o">-</span><span class="n">parse</span> <span class="n">origin</span><span class="o">/</span><span class="n">development</span><span class="o">^</span><span class="p">{</span><span class="n">commit</span><span class="p">}</span> <span class="c1"># timeout=10</span>
+<span class="n">Checking</span> <span class="n">out</span> <span class="n">Revision</span> <span class="mi">9</span><span class="n">d7ccaf9cb8eb5d682eb4eba4d7d8d75835da3b0</span> <span class="p">(</span><span class="n">origin</span><span class="o">/</span><span class="n">development</span><span class="p">)</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">config</span> <span class="n">core</span><span class="o">.</span><span class="n">sparsecheckout</span> <span class="c1"># timeout=10</span>
+ <span class="o">&gt;</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">f</span> <span class="mi">9</span><span class="n">d7ccaf9cb8eb5d682eb4eba4d7d8d75835da3b0</span>
+<span class="n">Commit</span> <span class="n">message</span><span class="p">:</span> <span class="s2">&quot;Create Jenkinsfile for pipeline processing&quot;</span>
+<span class="n">First</span> <span class="n">time</span> <span class="n">build</span><span class="o">.</span> <span class="n">Skipping</span> <span class="n">changelog</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>then we start executing the content of our <em>Jenkinsfile</em>:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stage</span><span class="p">(</span><span class="s1">&#39;Build&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">steps</span> <span class="p">{</span>
+        <span class="n">echo</span> <span class="s1">&#39;Building.. &#39;</span>
+        <span class="n">sh</span> <span class="s1">&#39;echo GIT branch is $GIT_BRANCH&#39;</span>
+        <span class="n">sh</span> <span class="s1">&#39;ls -l&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is one of the <em>stage</em> we saw in the previous page (one of the green box). Here we mostly
+create some ouput for tracing purposes, highlight which branch we retrieved and then list the
+content of the directory where we are.</p>
+<p>this is the output of this in our console</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Pipeline</span><span class="p">]</span> <span class="n">echo</span>
+<span class="n">Building</span><span class="o">..</span>
+<span class="p">[</span><span class="n">Pipeline</span><span class="p">]</span> <span class="n">sh</span>
+<span class="p">[</span><span class="n">class2</span><span class="o">-</span><span class="n">pipeline</span><span class="p">]</span> <span class="n">Running</span> <span class="n">shell</span> <span class="n">script</span>
+<span class="o">+</span> <span class="n">echo</span> <span class="n">GIT</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">origin</span><span class="o">/</span><span class="n">development</span>
+<span class="n">GIT</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">origin</span><span class="o">/</span><span class="n">development</span>
+<span class="p">[</span><span class="n">Pipeline</span><span class="p">]</span> <span class="n">sh</span>
+<span class="p">[</span><span class="n">class2</span><span class="o">-</span><span class="n">pipeline</span><span class="p">]</span> <span class="n">Running</span> <span class="n">shell</span> <span class="n">script</span>
+<span class="o">+</span> <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+<span class="n">total</span> <span class="mi">12</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">jenkins</span> <span class="n">jenkins</span>  <span class="mi">15</span> <span class="n">Nov</span> <span class="mi">26</span> <span class="mi">16</span><span class="p">:</span><span class="mi">26</span> <span class="n">GitRocks</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">jenkins</span> <span class="n">jenkins</span> <span class="mi">517</span> <span class="n">Nov</span> <span class="mi">26</span> <span class="mi">16</span><span class="p">:</span><span class="mi">26</span> <span class="n">Jenkinsfile</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">jenkins</span> <span class="n">jenkins</span>  <span class="mi">63</span> <span class="n">Nov</span> <span class="mi">26</span> <span class="mi">16</span><span class="p">:</span><span class="mi">26</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>You can see that we retrieved our <em>repository</em> but also got placed in our repository automatically.</p>
+<p>This is the logic of the <em>Jenkinsfile</em>. If you want to see more examples of <em>Jenkinsfile</em>, don’t
+hesitate to check the files in our <strong>ADC-Services</strong> and <strong>my-webapp-ci-cd-demo</strong> repositories</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>remember to go into the <strong>dev</strong> branch of those <em>repositories</em></p>
+<a class="reference internal image-reference" href="../../_images/img0281.png"><img alt="../../_images/img0281.png" class="align-center" src="../../_images/img0281.png" style="width: 932.0px; height: 487.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="last reference internal image-reference" href="../../_images/img0291.png"><img alt="../../_images/img0291.png" class="align-center" src="../../_images/img0291.png" style="width: 1099.0px; height: 359.0px;" /></a>
+</div>
+</div>
+</div>
+
+
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab1.html" title="Setup a new Jenkins pipeline" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  </body>
+</html>

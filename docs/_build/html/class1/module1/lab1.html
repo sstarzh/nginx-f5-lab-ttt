@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <head>
   
-  <!--STAGING:-->
-  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
-  <!--Production:-->
-  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.1.1. Lab – Download the BIG-IP Virtual Edition Image</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Review Gitlab setup</title>
   
 
   <meta charset="utf-8">
   <!-- Twitter Bootstrap viewport setting -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- F5 metadata -->
-  <meta name="kb_doc_type" content="Manual"/>
-  <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.1.1. Lab – Download the BIG-IP Virtual Edition Image"/>
-  <meta name="product" content="Getting Started with F5 BIG-IP"/>
+  <meta name="title" content="Review Gitlab setup"/>
+  <meta name="product" content="F5 + NGINX+ TTT Lab"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
   <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 + NGINX+ TTT Lab" content=""/>
+
 
   
-  
+
   
   <link href="https://cdn.f5.com/favicon.ico" rel="icon">
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text"> jQuery.noConflict(true)</script>
 
 </head>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -36,32 +34,44 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.1.1. Lab – Download the BIG-IP Virtual Edition Image &#8212; Getting Started with F5 BIG-IP  documentation</title>
+    <title>Review Gitlab setup &#8212; F5 + NGINX+ TTT Lab  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor" href="lab2.html" />
-    <link rel="prev" title="2.1. Module – Installing a BIG-IP Virtual Edition" href="module1.html" />
+    <link rel="next" title="Review Jenkins setup" href="lab2.html" />
+    <link rel="prev" title="Module 1 - Review the setup" href="module1.html" />
+
+  
+    
+
+  
   </head><body>
   <div id="clouddocs-header"></div>
 
     <div id="dismiss">
-      <button type="button" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>
+      <button type="button" class="btn btn-info navbar-btn site-hidden">
+        <i class="fa fa-align-justify"></i>
+      </button>
     </div>
     <div id="sidebar" class="section-nav">
+      
       <nav class="nav-sidebartoc">
-        <h5>Getting Started with F5 BIG-IP  documentation </h5>
+
+        
+         <h5>F5 + NGINX+ TTT Lab  </h5>
+        
 <div id="searchbox" role="search">
   <form class="search" action="../../search.html" method="get">
     <input type="text" class="search" name="q" placeholder=" Search..." />
@@ -75,9 +85,10 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.1.1. Lab – Download the BIG-IP Virtual Edition Image</a><ul>
-<li><a class="reference internal" href="#task-open-a-web-browser">2.1.1.1. Task – Open a Web Browser</a></li>
-<li><a class="reference internal" href="#task-download-the-image">2.1.1.2. Task – Download the Image</a></li>
+<li><a class="reference internal" href="#">Review Gitlab setup</a><ul>
+<li><a class="reference internal" href="#gitlab-setup-my-webapp-ci-cd-demo">Gitlab setup - my-webapp-ci-cd-demo</a></li>
+<li><a class="reference internal" href="#gitlab-setup-adc-services">Gitlab setup - ADC-Services</a></li>
+<li><a class="reference internal" href="#gitlab-setup-larry-security-policies">Gitlab setup - Larry/Security-Policies</a></li>
 </ul>
 </li>
 </ul>
@@ -88,14 +99,12 @@
         <span class="nav-sidebartoc">
             <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - Getting Started with F5 BIG-IP</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Installing a BIG-IP Virtual Edition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">2.2. Module – Installing a BIG-IP Appliance</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">Class 1 - demo IaC with CI/CD Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">Module 1 - Review the setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Module 2 - Trigger the IaC Demo</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../markdown.html">4. Markdown files are also supported</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">Class 2 - Setup our first pipeline</a></li>
 </ul>
 
         </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
@@ -111,83 +120,149 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">Getting Started with F5 BIG-IP </a> &gt; 2.1.1. Lab – Download the BIG-IP Virtual Edition Image</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 + NGINX+ TTT Lab </a> &gt; Review Gitlab setup</li>
           </ul>
       </nav>
       
       
 
     
-  <div class="section" id="lab-download-the-bip-ve-image">
-<h1>2.1.1. Lab – Download the BIG-IP Virtual Edition Image<a class="headerlink" href="#lab-download-the-bip-ve-image" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Needs lab description</p>
-</div>
-<p>This lab will teach you how to download the BIG-IP Virtual Edition image to your system.</p>
-<div class="section" id="task-open-a-web-browser">
-<h2>2.1.1.1. Task – Open a Web Browser<a class="headerlink" href="#task-open-a-web-browser" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Needs task description</p>
-</div>
-<p>In this task you will open a web browser and navigate to the F5 Networks Downloads
-site.</p>
+  <div class="section" id="review-gitlab-setup">
+<h1>Review Gitlab setup<a class="headerlink" href="#review-gitlab-setup" title="Permalink to this headline">¶</a></h1>
+<p>We have setup the following in GitLab:</p>
+<ul class="simple">
+<li>A Tenant/User called <strong>TenantA</strong>. It hosts all the applications and adc services tied to this tenant.
+You can have multiple applications owned by this user and multiple BIG-IP/ADC services here.
+For this demo, we will use two different repos in <strong>TenantA</strong>: <em>my-webapp-ci-cd-demo</em> and <em>ADC-Services</em></li>
+<li>Another Tenant/User called <strong>Larry</strong>. It hosts all the <em>Web Application Firewall</em> policies that people
+can leverage/consume.</li>
+</ul>
+<p>Connect to your Gitlab. It should be <a class="reference external" href="http:/">http:/</a>/&lt;IP of your VM&gt;:1080/</p>
+<ul class="simple">
+<li>Login: root</li>
+<li>Password: Pa55w0rd</li>
+</ul>
+<p>Click on <em>Projects</em> &gt; <em>Explore Projects</em> &gt; <em>All</em></p>
+<a class="reference internal image-reference" href="../../_images/img009.png"><img alt="../../_images/img009.png" class="align-center" src="../../_images/img009.png" style="width: 913.0px; height: 425.0px;" /></a>
+<p><strong>my-webapp-ci-cd-demo</strong> contains the application definition and the <em>ADC services</em> we want to attach to it.
+It leverages the AS3 definition of a service. It is owned by the user/group called <em>TenantA</em></p>
+<p><strong>ADC Services</strong> contains all the services tied to this User/Tenant. It will contain all the different services needed
+by the application defined in this tenant. It is owned by the user/group called <em>TenantA</em></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">An account is required to download software.  You can create one at
-<a class="reference external" href="https://login.f5.com/resource/registerEmail.jsp">https://login.f5.com/resource/registerEmail.jsp</a></p>
+<p class="last">it is worth highlighting that in each repo, we leverage the dev branch. The idea is to explain how you can
+create a CI/CD pipeline for the dev branch and replicate the same process for the <em>master</em> or <em>prod</em> branch. For this
+demo, we will use the dev branch. Make sure to select the right branch when browsing <em>GitLab</em>.</p>
 </div>
-<p>Follow these steps to complete this task:</p>
-<ol class="arabic">
-<li><p class="first">Open your web browser</p>
+<p><strong>Security-Policies</strong> contains all the approved <em>Web Application Firewall</em> policies. People can retrieve them to use on their
+WAF solution. It is owned by the user/group called <em>Larry</em></p>
+<div class="section" id="gitlab-setup-my-webapp-ci-cd-demo">
+<h2>Gitlab setup - my-webapp-ci-cd-demo<a class="headerlink" href="#gitlab-setup-my-webapp-ci-cd-demo" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve selected the <em>dev</em> branch, you should see different folders in the <strong>my-webapp-ci-cd-demo</strong> repo.</p>
+<a class="reference internal image-reference" href="../../_images/img002.png"><img alt="../../_images/img002.png" class="align-center" src="../../_images/img002.png" style="width: 560.0px; height: 527.0px;" /></a>
+<ul>
+<li><p class="first"><em>jenkins</em>: This is folder that will be consumed by the CI Server. It contains all the right scripts to process this folder and
+do the app deployment, update the ADC-services repo, …</p>
 </li>
-<li><p class="first">Navigate to <a class="reference external" href="https://downloads.f5.com">https://downloads.f5.com</a></p>
+<li><p class="first"><em>my-adc-cluster</em>: this folder will contain the ADC cluster target to host our ADC service. It contains the name of the targetted
+cluster. Consul will provide us with all the right information related to it: BIG-IP IPs, credentials,
+… You will also see the service we want to deploy on our ADC cluster. Take some time to review the service definition.
+You will see that: we leverage the AS3 service definition schema, pool members are not <em>yet</em> defined and that our service
+definition includes a WAF policy.</p>
+<a class="reference internal image-reference" href="../../_images/img012.png"><img alt="../../_images/img012.png" class="align-center" src="../../_images/img012.png" style="width: 1020.0px; height: 729.0px;" /></a>
+<p>The pool member(s) are not defined already because the application is not deployed. In a dynamic environment, you can’t guess
+what the pool member(s) will be. We will need to deploy the application, get the pool member(s) information and update our service
+definition accordingly.</p>
 </li>
-<li><p class="first">Login with your username and password.</p>
+<li><p class="first"><em>my-app-definition</em>: this folder contains the app definition. It contains files that we will use to deploy the app on Openshift:
+deployment, services, route</p>
 </li>
-<li><p class="first">After logging in you should see the following window:</p>
-<p><img alt="image1" src="../../_images/image001.png" /></p>
+<li><p class="first"><em>test</em>: this folder contains multiple tests to do against the app to ensure it is up and running as expected.</p>
 </li>
-</ol>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">it is worth highlighting that the ADC service definition is based on the AS3 schema
+but only contains the service definition! not the full tenant definition needed by <strong>AS3</strong>.
+The whole <strong>AS3</strong> declaration for this tenant is within the <strong>ADC-Services</strong> repo that we will
+review later.</p>
 </div>
-<div class="section" id="task-download-the-image">
-<h2>2.1.1.2. Task – Download the Image<a class="headerlink" href="#task-download-the-image" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">Needs task description</p>
+<p>There is also an important file at the root of the repo: <em>jenkinsFile</em>.
+When you trigger a webhook from GitLab to Jenkins, the first thing Jenkins will do is to
+retrieve this repo.
+From here, it will process the jenkinsFile to know what to do (there are other ways but that is
+how we will proceed here).  The whole pipeline is defined in this file and it will execute scripts
+in the jenkins folder</p>
+<p>Every time this repo is updated, it will trigger an already defined <em>WebHook</em>.
+This <em>WebHook</em> will trigger a pipeline on the Jenkins server. In your <strong>my-webapp-ci-cd-demo</strong> repo,
+Go to <em>Setting</em> &gt; <em>Integration</em> to review the WebHook defined.</p>
+<a class="reference internal image-reference" href="../../_images/img003.png"><img alt="../../_images/img003.png" class="align-center" src="../../_images/img003.png" style="width: 1434.0px; height: 696.0px;" /></a>
+<p>You can learn more about <em>WebHooks</em> here: <a class="reference external" href="https://docs.gitlab.com/ee/user/project/integrations/webhooks.html">WebHooks</a>.</p>
+<p>Here you can see that <em>GitLab</em> is setup to send a “signal” to:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.18</span><span class="o">.</span><span class="mf">0.3</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">webapp</span><span class="o">-</span><span class="n">ci</span><span class="o">-</span><span class="n">cd</span><span class="o">-</span><span class="n">demo</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
 </div>
-<p>In this task we will download the F5 Networks BIG-IP Virtual Edition image to your system</p>
-<p>Follow these steps to complete this task:</p>
-<ol class="arabic">
-<li><p class="first">Click the ‘Find a Download’ button.</p>
-<img alt="../../_images/image002.png" src="../../_images/image002.png" />
-</li>
-<li><p class="first">Click the link that contains the BIG-IP TMOS software version you would like
-to download.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Be sure to click a link that has “Virtual Edition” in the name</p>
-</div>
-</li>
-<li><p class="first">Find the image appropriate for your hypervisor</p>
-</li>
-<li><p class="first">Download the image and save it to you local system</p>
-</li>
-</ol>
+<p>172.18.0.3 is the IP Address of our container running <em>Jenkins</em> (it’s a docker network).
+The URI: <em>/project/my-webapp-ci-cd-demo-dev</em>  defines a project/job/pipeline defined on <em>Jenkins</em>.
+This is our pipeline.</p>
+<p>This specific pipeline will be triggered every time we update our <strong>my-webapp-ci-cd-demo</strong> repo.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>There is a file called <em>DELETE</em> at the root of the <strong>my-webapp-ci-cd-demo</strong> repo. This file
+is needed to do the IaC demo. We will explain this in module2.</p>
+<a class="last reference internal image-reference" href="../../_images/img004.png"><img alt="../../_images/img004.png" class="align-center" src="../../_images/img004.png" style="width: 351.59999999999997px; height: 315.0px;" /></a>
 </div>
 </div>
-
+<div class="section" id="gitlab-setup-adc-services">
+<h2>Gitlab setup - ADC-Services<a class="headerlink" href="#gitlab-setup-adc-services" title="Permalink to this headline">¶</a></h2>
+<p>If you go into the repo <strong>ADC-Services</strong> and select the <em>dev</em> branch, you should see this:</p>
+<a class="reference internal image-reference" href="../../_images/img005.png"><img alt="../../_images/img005.png" class="align-center" src="../../_images/img005.png" style="width: 386.4px; height: 318.59999999999997px;" /></a>
+<p>Here you should have a folder(s) (here one). Each directory represents a BIG-IP cluster.
+In this case, we have a single cluster called <strong>cluster-nicolas</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">this cluster is defined in consul so that we can automatically retrieve its IP information,
+credentials and which port is used to access the management interface. We could add more cluster here
+if needed</p>
+</div>
+<p>The different python scripts available here will be used by the <em>jenkinsFile</em> to execute the <em>Jenkins pipeline</em>
+called <strong>adc-services-dev</strong>.</p>
+<p>if you check the folder <strong>cluster-nicolas</strong>, you’ll see that its empty for now. The reason is that we
+haven’t deployed yet an application in this cluster. There is only one file called <em>OWNER</em>.</p>
+<a class="reference internal image-reference" href="../../_images/img006.png"><img alt="../../_images/img006.png" class="align-center" src="../../_images/img006.png" style="width: 390.59999999999997px; height: 214.79999999999998px;" /></a>
+<p>The main reason for this <em>OWNER</em> file was to put something into the folder. If the folder was empty, it wouldn’t
+show up in <em>GitLab</em>.</p>
+<p>We can also check the <em>WebHook</em> created by going into <em>Settings</em> &gt; <em>Integration</em>:</p>
+<a class="reference internal image-reference" href="../../_images/img007.png"><img alt="../../_images/img007.png" class="align-center" src="../../_images/img007.png" style="width: 852.6px; height: 383.4px;" /></a>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There is something really specific about this <strong>ADC-Services</strong> repo: <strong>IT IS NEVER HANDLED MANUALLY</strong>.
+The expectation here is that the different applications deployed via <em>GitLab</em> will automatically update accordingly
+this repo. This is something we will be able to test/confirm when doing module2.</p>
+</div>
+</div>
+<div class="section" id="gitlab-setup-larry-security-policies">
+<h2>Gitlab setup - Larry/Security-Policies<a class="headerlink" href="#gitlab-setup-larry-security-policies" title="Permalink to this headline">¶</a></h2>
+<p>Here there is no <em>dev</em> branch. We only have already “approved” security policies that can be consumed by
+the different application teams. They can retrieve those security policies and import them into their <em>CI/CD pipelines</em>.</p>
+<p>If you browse this repository, you’ll see the following:</p>
+<a class="reference internal image-reference" href="../../_images/img010.png"><img alt="../../_images/img010.png" class="align-center" src="../../_images/img010.png" style="width: 584.4px; height: 171.6px;" /></a>
+<p>Click on the folder <em>policies</em> to see what is available to the application teams.</p>
+<a class="reference internal image-reference" href="../../_images/img011.png"><img alt="../../_images/img011.png" class="align-center" src="../../_images/img011.png" style="width: 579.6px; height: 219.6px;" /></a>
+<p>Here we see that people have access to three different WAF policies. In our demo, we will use the policy called
+<em>asm-policy-linux-high.xml</em>.</p>
+</div>
+</div>
 
 
     
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="module1.html" title="2.1. Module – Installing a BIG-IP Virtual Edition" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="module1.html" title="Module 1 - Review the setup" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="lab2.html" title="2.1.2. Lab – Install a BIG-IP Virtual Edition image on a Hypervisor" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab2.html" title="Review Jenkins setup" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>
@@ -203,11 +278,8 @@ to download.</p>
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <script src="../../_static/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-    jQuery.noConflict(true)
-  </script>
   <script src="../../_static/js/clouddocs.js"></script>
   </body>
 </html>

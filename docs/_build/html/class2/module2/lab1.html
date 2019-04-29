@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Setup a new Jenkins pipeline</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Setup a new Jenkins pipeline"/>
+  <meta name="product" content="F5 + NGINX+ TTT Lab"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="None"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 + NGINX+ TTT Lab" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Setup a new Jenkins pipeline &#8212; F5 + NGINX+ TTT Lab  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5_agility_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/f5-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/21fb8a09c3.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Setup the Jenkinsfile" href="lab2.html" />
+    <link rel="prev" title="Module 2 - Setup Jenkins" href="module2.html" />
+
+  
+    
+
+  
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="dismiss">
+      <button type="button" class="btn btn-info navbar-btn site-hidden">
+        <i class="fa fa-align-justify"></i>
+      </button>
+    </div>
+    <div id="sidebar" class="section-nav">
+      
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 + NGINX+ TTT Lab  </h5>
+        
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <h5>Current Page</h5>
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Setup a new Jenkins pipeline</a><ul>
+<li><a class="reference internal" href="#access-jenkins">Access Jenkins</a></li>
+<li><a class="reference internal" href="#create-a-new-pipeline">Create a new pipeline</a></li>
+<li><a class="reference internal" href="#setup-our-gitlab-webhook">Setup our GitLab Webhook</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+        <hr>
+        <h5>Site Contents</h5>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">Class 1 - demo IaC with CI/CD Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class2.html">Class 2 - Setup our first pipeline</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Module 1 - Setup Gitlab</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module2.html">Module 2 - Setup Jenkins</a></li>
+</ul>
+</li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+  
+  <div class="main active" id="content">
+    <article class="docs-container site-article-inner">
+            <nav class="site-breadcrumb-nav site-nav">
+          <ul class="site-breadcrumb-list">
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">F5 + NGINX+ TTT Lab </a> &gt; Setup a new Jenkins pipeline</li>
+          </ul>
+      </nav>
+      
+      
+
+    
+  <div class="section" id="setup-a-new-jenkins-pipeline">
+<h1>Setup a new Jenkins pipeline<a class="headerlink" href="#setup-a-new-jenkins-pipeline" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, we will create a new pipeline called <strong>class2-master</strong> on <em>Jenkins</em>.</p>
+<div class="section" id="access-jenkins">
+<h2>Access Jenkins<a class="headerlink" href="#access-jenkins" title="Permalink to this headline">¶</a></h2>
+<p>Connect to <em>Jenkins</em>. It should be <a class="reference external" href="http:/">http:/</a>/&lt;IP of your VM&gt;:1180/</p>
+<ul class="simple">
+<li>Login: TenantA</li>
+<li>Password: Pa55w0rd</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you use UDF (F5 private cloud), you can either use the RDP Jumphost to access <em>Jenkins</em>
+or the shortcut in the interface</p>
+<a class="last reference internal image-reference" href="../../_images/img0011.png"><img alt="../../_images/img0011.png" class="align-center" src="../../_images/img0011.png" style="width: 162.0px; height: 209.0px;" /></a>
+</div>
+<p>Once you’re authenticated, you should see something like this:</p>
+<a class="reference internal image-reference" href="../../_images/img0023.png"><img alt="../../_images/img0023.png" class="align-center" src="../../_images/img0023.png" style="width: 715.5px; height: 203.0px;" /></a>
+<p>Since we already have some pipeline working with our <em>GitLab</em> server, some configuration has already
+been made. The main item is how to authenticate with <em>GitLab</em>. To review this setup, click on
+<strong>Manage Jenkins</strong> and then <strong>Configure System</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/img0093.png"><img alt="../../_images/img0093.png" class="align-center" src="../../_images/img0093.png" style="width: 906.0px; height: 582.0px;" /></a>
+<p>Scroll down to the <strong>Gitlab</strong> section. You’ll see that we have already setup a <em>GitLab</em> connection
+called <strong>local gitlab</strong>. We will use this connection name later in our new <em>pipeline</em>.</p>
+<a class="reference internal image-reference" href="../../_images/img0102.png"><img alt="../../_images/img0102.png" class="align-center" src="../../_images/img0102.png" style="width: 1037.0px; height: 389.0px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can see here that we referenced a credential called <strong>GitLAb API token</strong>. This token was
+created in <em>GitLab</em>. To generate an <em>API Token</em>, in <em>GitLab</em> go to your <em>User Settings</em> once you’re
+authenticated as <strong>TenantA</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/img0113.png"><img alt="../../_images/img0113.png" class="align-center" src="../../_images/img0113.png" style="width: 200.0px; height: 304.0px;" /></a>
+<p>Select the <strong>Access Tokens</strong> and you’ll see the <em>API Token</em> we referenced in <em>Jenkins</em></p>
+<a class="last reference internal image-reference" href="../../_images/img0123.png"><img alt="../../_images/img0123.png" class="align-center" src="../../_images/img0123.png" style="width: 1296.0px; height: 771.0px;" /></a>
+</div>
+<p>For <em>Jenkins</em> to be able to retrieve our <em>repositories</em> from <em>GitLab</em>, we also have setup some credentials.
+On the main page, click on <strong>Credentials</strong>. Here you’ll see an <em>ID</em> called <strong>TenantA-Gitlab</strong>, we will use
+this also in our new <a href="#id1"><span class="problematic" id="id2">*</span></a>pipeline.</p>
+<a class="reference internal image-reference" href="../../_images/img0252.png"><img alt="../../_images/img0252.png" class="align-center" src="../../_images/img0252.png" style="width: 1371.0px; height: 438.0px;" /></a>
+</div>
+<div class="section" id="create-a-new-pipeline">
+<h2>Create a new pipeline<a class="headerlink" href="#create-a-new-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>To create a new pipeline, click on the <strong>New Item</strong> link.</p>
+<a class="reference internal image-reference" href="../../_images/img0032.png"><img alt="../../_images/img0032.png" class="align-center" src="../../_images/img0032.png" style="width: 177.0px; height: 325.5px;" /></a>
+<p>Setup the following:</p>
+<ul class="simple">
+<li>Item name: <em>class2-pipeline</em></li>
+<li>Select <em>Pipeline</em></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/img0043.png"><img alt="../../_images/img0043.png" class="align-center" src="../../_images/img0043.png" style="width: 717.0px; height: 157.0px;" /></a>
+<p>Click <strong>OK</strong>.</p>
+<p>Here we setup the following:</p>
+<ul>
+<li><p class="first">Check <strong>github project</strong>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>Project url</em>: <a class="reference external" href="http:/">http:/</a>/&lt;your VM IP&gt;:1080/TenantA/Class2</li>
+<li><em>Gitlab Connection</em>: Select <strong>local gitlab</strong></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/img0053.png"><img alt="../../_images/img0053.png" class="align-center" src="../../_images/img0053.png" style="width: 921.0px; height: 150.0px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">In the <em>Build Triggers</em> section, check <strong>Build when a change is pushed to
+GitLab. GitLab webhook URL: http://172.18.0.3:8080/project/class2-pipeline</strong>.
+We will need to setup this <em>WebHook</em> later in <em>GitLab</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>Click on the <em>Advanced</em> button. Check the button <strong>Filter branches by name</strong>
+and in the <em>include</em> field: <strong>development</strong></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/img006a.png"><img alt="../../_images/img006a.png" class="align-center" src="../../_images/img006a.png" style="width: 1220.0px; height: 452.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/img006b.png"><img alt="../../_images/img006b.png" class="align-center" src="../../_images/img006b.png" style="width: 1194.0px; height: 538.0px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">sometimes you may see an error when specifying the <strong>development</strong> branch.
+Ignore the error and keep creating the <em>pipeline</em>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In the <em>Pipeline</em> section, Select <strong>Pipeline script from SCM</strong>.</p>
+<ul>
+<li><p class="first">For the <em>SCM</em> field, select <strong>git</strong></p>
+<ul>
+<li><p class="first">For the <em>Repository URL</em>, specify the URL for your <em>GitLab</em> project</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">if you use UDF or the VM, here you need to specify the IP of the
+<em>GitLab</em> container; hence: <a class="reference external" href="http://172.18.0.2/TenantA/Class2">http://172.18.0.2/TenantA/Class2</a></p>
+</div>
+</li>
+<li><p class="first"><em>Credentials</em>, Select <strong>TenantA/…</strong></p>
+</li>
+<li><p class="first"><em>Branches to build</em>: <strong>development</strong>. This means that we will retrieve the branch that
+got updated and triggered the pipeline.</p>
+</li>
+</ul>
+</li>
+<li><p class="first">The <em>Script Path</em> field is to mention a <strong>File Name</strong> that
+<em>Jenkins</em> will look for into our repo to know what it needs to do. We will
+have to create this file later. Here it will look for a file called <strong>Jenkinsfile</strong></p>
+<a class="reference internal image-reference" href="../../_images/img0073.png"><img alt="../../_images/img0073.png" class="align-center" src="../../_images/img0073.png" style="width: 960.0px; height: 611.0px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">Click on <strong>Apply/Save</strong>. Your pipeline has been created.</p>
+<a class="reference internal image-reference" href="../../_images/img0083.png"><img alt="../../_images/img0083.png" class="align-center" src="../../_images/img0083.png" style="width: 1437.0px; height: 475.0px;" /></a>
+</li>
+</ul>
+<p>We still need to do two things:</p>
+<ul class="simple">
+<li>Create a <em>WebHook</em> in <em>GitLab</em> to trigger our <em>pipeline</em> when our repo is updated</li>
+<li>add a <em>Jenkinsfile</em> to our <em>GitLab</em> repo to details what we need to do when our pipeline
+is triggered</li>
+</ul>
+</div>
+<div class="section" id="setup-our-gitlab-webhook">
+<h2>Setup our GitLab Webhook<a class="headerlink" href="#setup-our-gitlab-webhook" title="Permalink to this headline">¶</a></h2>
+<p>To create the <em>WebHook</em>, connect to your <em>GitLab</em> GUI.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>reminder to login into <em>GitLab</em></p>
+<ul class="last simple">
+<li>Login: TenantA</li>
+<li>Password: Pa55w0rd</li>
+</ul>
+</div>
+<a class="reference internal image-reference" href="../../_images/img0133.png"><img alt="../../_images/img0133.png" class="align-center" src="../../_images/img0133.png" style="width: 533.0px; height: 444.0px;" /></a>
+<p>Click on your repo <strong>TenantA / Class 2</strong>. Click on <strong>Settings</strong> &gt; <strong>Integrations</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/img0143.png"><img alt="../../_images/img0143.png" class="align-center" src="../../_images/img0143.png" style="width: 200.0px; height: 721.0px;" /></a>
+<p>When we created our <strong>class2-pipeline</strong>, we saw the following during its setup:</p>
+<a class="reference internal image-reference" href="../../_images/img006a.png"><img alt="../../_images/img006a.png" class="align-center" src="../../_images/img006a.png" style="width: 1220.0px; height: 452.0px;" /></a>
+<p>This is the URL we should use as our <em>WebHook</em>: <a class="reference external" href="http://172.18.0.3:8080/project/class2-pipeline">http://172.18.0.3:8080/project/class2-pipeline</a>.
+In the <em>GitLab</em> GUI:</p>
+<ul class="simple">
+<li>use this URL in the <em>URL</em> field.</li>
+<li>leave <em>Secret Token</em> empty.</li>
+<li>uncheck <em>Enable SSL verification</em></li>
+</ul>
+<p>Click the <strong>Add webhook</strong> button. Once it’s saved, you should see the following (you may need to
+scroll down).</p>
+<a class="reference internal image-reference" href="../../_images/img0153.png"><img alt="../../_images/img0153.png" class="align-center" src="../../_images/img0153.png" style="width: 688.0px; height: 139.0px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">don’t use the test button it won’t work. This is because we setup our pipeline to only accept
+push events from the <em>development</em> branch.</p>
+</div>
+<p>If you want to test your setup, go to your <em>development</em> branch and update the content of one of the file.</p>
+<a class="reference internal image-reference" href="../../_images/img0163.png"><img alt="../../_images/img0163.png" class="align-center" src="../../_images/img0163.png" style="width: 1032.0px; height: 565.0px;" /></a>
+<p>Once you’ve updated one of the two files, it will trigger our webhook.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>If you go back to the <em>Jenkins</em> GUI. You will see a red icon and</dt>
+<dd><p class="first">“stormy” cloud next our <strong>class2-pipeline</strong> pipeline. It means that the pipeline
+failed. This is expected and it shows that it got triggered by our <em>WebHook</em> test.</p>
+<a class="reference internal image-reference" href="../../_images/img0183.png"><img alt="../../_images/img0183.png" class="align-center" src="../../_images/img0183.png" style="width: 705.0px; height: 392.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click on the <strong>class2-pipeline</strong> link and then click on the latest build history number. It
+should be #1</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/img0193.png"><img alt="../../_images/img0193.png" class="align-center" src="../../_images/img0193.png" style="width: 351.0px; height: 636.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click on <strong>Console Output</strong> to see what happens with this <em>build</em>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/img0202.png"><img alt="../../_images/img0202.png" class="align-center" src="../../_images/img0202.png" style="width: 279.0px; height: 420.0px;" /></a>
+<p>You’ll see the output related to our <em>pipeline</em> being executed</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Started by GitLab push by TenantA
+[Office365connector] No webhooks to notify
+[Office365connector] No webhooks to notify
+java.io.FileNotFoundException
+        at jenkins.plugins.git.GitSCMFile$3.invoke(GitSCMFile.java:167)
+        at jenkins.plugins.git.GitSCMFile$3.invoke(GitSCMFile.java:159)
+        at jenkins.plugins.git.GitSCMFileSystem$3.invoke(GitSCMFileSystem.java:193)
+        at org.jenkinsci.plugins.gitclient.AbstractGitAPIImpl.withRepository(AbstractGitAPIImpl.java:29)
+        at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.withRepository(CliGitAPIImpl.java:72)
+        at jenkins.plugins.git.GitSCMFileSystem.invoke(GitSCMFileSystem.java:189)
+        at jenkins.plugins.git.GitSCMFile.content(GitSCMFile.java:159)
+        at jenkins.scm.api.SCMFile.contentAsString(SCMFile.java:338)
+        at org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition.create(CpsScmFlowDefinition.java:110)
+       at org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition.create(CpsScmFlowDefinition.java:67)
+        at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:303)
+        at hudson.model.ResourceController.execute(ResourceController.java:97)
+        at hudson.model.Executor.run(Executor.java:429)
+Finished: FAILURE
+</pre></div>
+</div>
+<p class="last">This is expected. Here it happens because we triggered the <em>WebHook</em> when the <em>Jenkinsfile</em> has not been created.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>We will setup the Jenkinsfile in our next lab.</p>
+</div>
+</div>
+
+
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="module2.html" title="Module 2 - Setup Jenkins" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab2.html" title="Setup the Jenkinsfile" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  </body>
+</html>
